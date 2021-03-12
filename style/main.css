@@ -1,0 +1,53 @@
+section {
+    display: none;
+    text-align:center;
+    padding:1%;
+    width: 100%;
+}
+
+body{
+  background-color: rgb(245, 255, 247);
+}
+.activeSection, .activeTimer, .infoLabel, .infoBtn, .activeCallBtn {
+    display: inline-block;
+  }
+label, button ,.noActiveImg{
+    display: none;
+  }
+
+  .infoBtn, .activeCallBtn {
+    border: none;
+    color: white;
+    background-color: rgb(29, 92, 57);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #4CAF50;
+    color: white;
+  }
+
+
+  th,td {
+    text-align: left;
+    padding:7px 
+   
+  }
+
+  tr{
+    padding:5px 
+  }
+
+  table{
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  input{
+    width: 60px;
+    height: 20px;
+  }

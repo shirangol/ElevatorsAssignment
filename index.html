@@ -1,16 +1,48 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script type="text/javascript" src="code/building.js"></script>
+        <script type="text/javascript" src="code/menu.js"></script>
+        <script type="text/javascript" src="code/elevators.js"></script>
         <link rel="stylesheet" type="text/css" href="style/main.css" />
         <link rel="stylesheet" type="text/css" href="style/elevator.css" />
-        <link rel="stylesheet" type="text/css" href="style/lobby.css" />
     </head>
     <body>
         <div id="main">
-            <section id="lobbySection" class="activeSection">
-                <button class="button" onclick="callElevator()" style="background-color: green;">Call Elevator</button>
+            <section id="structureMenuSection" class="activeSection">
+                <h1 > Settings</h1>
+                <table > 
+                        <tr>
+                            <th>
+                                <label id="elnumLb"  for="elnum" class="infoLabel"> Please choose number of elevators:</label>
+                            </th>
+                             <td>
+                                <input type="number" id="elnum"  value="2" min="1" ></input>
+                            </td>
+                        </tr>
+                        <br>
+                        <tr>
+                            <th>
+                                <label id="flnumLb" for="flnum" class="infoLabel"> Please choose number of floors:</label>
+                            </th>
+                            <td>
+                                <input type="number" id="flnum" value="7" min="1"></input>
+                            </td>
+                        </tr>
+                </table>
+                <br>
+                <br>
+                <button class="infoBtn" type="submit" onclick="setSettings()">Submit</button>
             </section>
-            <section id="elevatorSection"></section>
+            <section id="floorSection">
+                <button  class="infoBtn" onclick="backToSetting()" style=" float: left;margin-left: 30px;" >Setting</button>
+                <h1 id="floorNum" style=" margin-right: 10%">Floor 1</h1>
+                <div id="floorsList" class="btn-group">
+                </div>
+                <div id="curfloor">                
+                    <br>
+                </div>
+            </section>
         </div>
     </body>
     <footer></footer>
