@@ -51,7 +51,7 @@ function addFloorButton(flrNumber){
 
 function addFloorCallButton(flrNumber){
     let btn= document.createElement("button");
-    btn.innerText=`call button`;
+    btn.innerText=`Call Elevator`;
     btn.style.background='green'
     btn.id=`callBtn${flrNumber}`
     btn.style.margin='20px'
