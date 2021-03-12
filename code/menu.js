@@ -24,6 +24,7 @@ function changeActiveSection(id){
     section.classList.add("activeSection");
 }
 
+//Validation of inputs settings
 function validationInput(){
     let elnum= document.getElementById('elnum');
     if(!elnum.value || elnum.value<=0){

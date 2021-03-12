@@ -19,6 +19,7 @@ function addElevator(i){
     elevatorsObj.push(elv);
 }
 
+//Set building floors HTML
 function setFloorNumber(flNumber){
     let floorList= document.getElementById('floorsList');
     floorList.innerHTML='';
@@ -83,7 +84,7 @@ function addElevatorImage(imgGrid,floor){
     return imgGrid
 }
 
-
+//Change floor view
 function changeFloor(floorNum){
     let activeTimer = document.getElementsByClassName("activeTimer");
     let activeCallBtn=document.getElementsByClassName("activeCallBtn");
@@ -101,6 +102,7 @@ function changeFloor(floorNum){
     document.getElementById("floorNum").innerText=`Floor ${floorNum+1}`
 }
 
+//Clear building data
 function clearBuildingData(){
     elevatorsObj=[];
     floorsObj=[];
