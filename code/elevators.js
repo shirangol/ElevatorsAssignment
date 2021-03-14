@@ -80,7 +80,9 @@ function busyElevator(elv,elvFloor){
         if(elevatorsObj.length==0){clearTimeout(busyTimeout)}
         elv.isAvailable=true;
         let elvImg=document.getElementById(`imgElv${elv.elvID}Floor${elvFloor}`);
-        elvImg.style.removeProperty('border');
+        if(elvImg.style!='null'){
+            elvImg.style.removeProperty('border');
+        }
         numberOFBusyElevators--;
     },2000);
 }
