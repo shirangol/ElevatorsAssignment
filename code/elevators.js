@@ -1,5 +1,6 @@
 function callElevator(btn){
     if( btn.style.background =="green"){
+        let currentFloor=floorNumber
         var callElv=setInterval(function (){
             //To initialize settings
             if(elevatorsObj.length==0){clearInterval(callElv)}
@@ -7,11 +8,17 @@ function callElevator(btn){
             if(numberOFBusyElevators< elevatorsObj.length){
                 btn.style.background='red';
                 let elevator= getCloseElevator();
-                elevator.isAvailable=false;
-                numberOFBusyElevators++;
-                startElevatorTimer(elevator, btn);
-                elevator.curFloor= floorNumber;
-                clearInterval(callElv)
+                if(!elevator){
+                    btn.style.background='orange';
+                    setInterval(callElv)
+                }else{
+                    elevator.isAvailable=false;
+                    numberOFBusyElevators++;
+                    let elvImg=document.getElementById(`imgElv${elevator.elvID}Floor${currentFloor}`);
+                    startElevatorTimer(elevator, elvImg,btn,currentFloor);
+                    elevator.curFloor= floorNumber;
+                    clearInterval(callElv)}
+
             }else{
                 //All the elevators are busy
                 btn.style.background='orange';
@@ -49,9 +56,7 @@ function getCloseElevator(){
 }
 
 //Timer for the arrival of the elevator to the floor
-function startElevatorTimer(elv, btn){
-    let currentFloor=floorNumber;
-    let elvImg=document.getElementById(`imgElv${elv.elvID}Floor${currentFloor}`);
+function startElevatorTimer(elv,elvImg, btn,currentFloor){
     elvImg.style.border = "5px solid red"
     let timer= Math.abs(currentFloor-elv.curFloor);
     let timeLabel= document.getElementById(`timer${currentFloor}`);
