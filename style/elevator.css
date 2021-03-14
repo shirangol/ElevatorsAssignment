@@ -2,9 +2,6 @@
     grid-template-columns: auto auto auto;
     margin-left: auto;
     justify-content: space-evenly;
-/* 
-    float: left;
-    width: 25%; */
   }
   .grid-item {
     display:inline-block ;
