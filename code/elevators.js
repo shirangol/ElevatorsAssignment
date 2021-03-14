@@ -80,7 +80,7 @@ function busyElevator(elv,elvFloor){
         if(elevatorsObj.length==0){clearTimeout(busyTimeout)}
         elv.isAvailable=true;
         let elvImg=document.getElementById(`imgElv${elv.elvID}Floor${elvFloor}`);
-        if(!elvImg.style){
+        if(elvImg.style){
             elvImg.style.removeProperty('border');
         }
         numberOFBusyElevators--;
